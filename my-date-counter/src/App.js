@@ -6,13 +6,13 @@ const messages = [
   "Invest your new income 🤑",
 ];
 export default function App() {
-  useState;
+  const [step, setStep] = useState(1);
 
   function handlePrevious() {
-    alert("Previous");
+    if (step > 1) setStep(step - 1);
   }
   function handleNext() {
-    alert("Next");
+    if (step < 3) setStep(step + 1);
   }
 
   return (
@@ -28,13 +28,13 @@ export default function App() {
       <div className="buttons">
         <button
           style={{ backgroundColor: "#7950f2", color: "#fff" }}
-          onClick={() => alert(handlePrevious)}
+          onClick={handlePrevious}
         >
           Previous
         </button>
         <button
           style={{ backgroundColor: "#7950f2", color: "#fff" }}
-          onClick={() => alert(handleNext)}
+          onClick={handleNext}
         >
           Next
         </button>
